@@ -1,8 +1,27 @@
-body {
-  color: red;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-  color: red;
-  font-family: monospace;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* LANDING PAGE */
+/* Ensure the landing section takes 100% of the viewport height */
+.landing {
+  height: 100vh; /* 100% of viewport height */
+  background-color: #eddfcb; /* Change the background color as needed */
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center;
+  text-align: center; */
+}
+
+
+/* REVIEWS SECTION */
+.reviews-section {
+  padding: 20px;
 }
