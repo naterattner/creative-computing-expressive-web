@@ -4,7 +4,7 @@ export function displayReviews(data) {
   
 	data.forEach(item => {
 	  const div = document.createElement('div');
-	  div.classList.add('review');
+	  div.classList.add('review-card');
   
 	  // Extracting fields from the JSON object
 	  const name = document.createElement('p');
