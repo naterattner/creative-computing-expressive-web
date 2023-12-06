@@ -1,31 +1,22 @@
-// Function to fetch the JSON file
-async function fetchJSONFile() {
-	try {
-	  const response = await fetch('./assets/data/merged_data_2021.json');
-	  const data = await response.json();
-	  return data;
-	} catch (error) {
-	  console.error('Error fetching data:', error);
-	  return null;
+import { fetchJSONFile, getRandomItems, processData } from './functionsData.js';
+
+import { displayReviews } from './functionsCards.js';
+  
+// Call the function to initiate data processing
+//processData('./assets/data/merged_data_2021.json');
+// console.log(randomItems)
+
+// Call the function to get random items and assign it to a variable
+async function getDataAndDisplay() {
+	const data = await processData('./assets/data/merged_data_2021.json');
+	if (data) {
+		console.log(data)
+	  // Use the data for further processing or display
+	  displayReviews(data); // Call the displayReviews function with the fetched data
 	}
   }
   
-  // Function to get a random subset of items
-  function getRandomItems(data, count) {
-	const shuffled = data.sort(() => 0.5 - Math.random());
-	return shuffled.slice(0, count);
-  }
-  
-  // Fetch and process the data
-  async function processData() {
-	const jsonData = await fetchJSONFile();
-	if (jsonData) {
-	  const randomItems = getRandomItems(jsonData, 100); // Get a random selection of 100 items
-	  console.log(randomItems); // Do something with the randomly selected items
-	} else {
-	  console.error('Failed to fetch data.');
-	}
-  }
-  
-  // Call the function to initiate data processing
-  processData();
+document.addEventListener('DOMContentLoaded', () => {
+// Your JavaScript code that interacts with the DOM goes here
+getDataAndDisplay(); // Call your function here
+});
