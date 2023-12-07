@@ -24,7 +24,7 @@ export function getRandomItems(data, count) {
 export async function processData(dataPath) {
 	const jsonData = await fetchJSONFile(dataPath);
 	if (jsonData) {
-	  const randomItems = getRandomItems(jsonData, 100); // Get a random selection of 100 items
+	  const randomItems = getRandomItems(jsonData, 54); // Get a random selection of 54 items
 	  return randomItems; // Return the random items
 	} else {
 	  console.error('Failed to fetch data.');
