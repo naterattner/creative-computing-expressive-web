@@ -35,5 +35,10 @@ getDataAndDisplay().then(() => {
 	console.error('Error fetching data:', error);
   });
 
+
+
+
+
+  
 });
 

@@ -5,33 +5,67 @@ export function displayReviews(data) {
 	data.forEach(item => {
 	  const div = document.createElement('div');
 	  div.classList.add('review-card', 'grid-item');
+
+	  const cardDetailsDiv = document.createElement('div');
+	  cardDetailsDiv.classList.add('card-details');
+
+	  const cardReviewsDiv = document.createElement('div');
+	  cardReviewsDiv.classList.add('card-reviews');
   
 	  // Extracting fields from the JSON object
 	  const name = document.createElement('p');
-	  name.textContent = `Name: ${item.name}`;
+	  name.classList.add('card-name');
+	  name.textContent = `${item.name}`;
   
 	  const location = document.createElement('p');
-	  location.textContent = `Location: ${item.city}, ${item.state}`;
+	  location.classList.add('card-location');
+	  location.textContent = `${item.city}, ${item.state}`;
+
+	  const stars = document.createElement('p');
+	  stars.classList.add('card-stars');
+	  stars.textContent = `${item.stars} stars`;
+
+	  const locationAndStars = document.createElement('p');
+	  locationAndStars.classList.add('card-location-and-stars')
+	  locationAndStars.textContent = `${item.city}, ${item.state} • ${item.stars} stars`;
+
+	  const hrElem = document.createElement('hr');
   
 	  const categories = document.createElement('p');
-	  categories.textContent = `Categories: ${item.categories}`;
+	  categories.classList.add('card-categories');
+	  categories.textContent = `${item.categories}`;
   
-	  const stars = document.createElement('p');
-	  stars.textContent = `Stars: ${item.stars}`;
-  
+	  const text5StarHeading = document.createElement('p');
+	  text5StarHeading.classList.add('card-text5StarHeading');
+	  text5StarHeading.textContent = `Five-Star Review`;
+
 	  const text5Star = document.createElement('p');
-	  text5Star.textContent = `Positive Review: ${item.text_5_star}`;
+	  text5Star.classList.add('card-text5Star');
+	  text5Star.textContent = `${item.text_5_star}`;
+
+	  const text1StarHeading = document.createElement('p');
+	  text1StarHeading.classList.add('card-text1StarHeading');
+	  text1StarHeading.textContent = `One-Star Review`;
   
 	  const text1Star = document.createElement('p');
-	  text1Star.textContent = `Negative Review: ${item.text_1_star}`;
+	  text1Star.classList.add('card-text1Star');
+	  text1Star.textContent = `${item.text_1_star}`;
   
 	  // Append all the fields to the div
-	  div.appendChild(name);
-	  div.appendChild(location);
-	  div.appendChild(categories);
-	  div.appendChild(stars);
-	  div.appendChild(text5Star);
-	  div.appendChild(text1Star);
+	  cardDetailsDiv.appendChild(name);
+	//   cardDetailsDiv.appendChild(location);
+	//   cardDetailsDiv.appendChild(stars); 
+	  cardDetailsDiv.appendChild(locationAndStars); 
+	  cardDetailsDiv.appendChild(categories);
+	  cardReviewsDiv.appendChild(text5StarHeading);
+	  cardReviewsDiv.appendChild(text5Star);
+	  cardReviewsDiv.appendChild(hrElem);
+	  cardReviewsDiv.appendChild(text1StarHeading);
+	  cardReviewsDiv.appendChild(text1Star);
+
+	  // Append those divs to the parent div
+	  div.appendChild(cardDetailsDiv)
+	  div.appendChild(cardReviewsDiv)
   
 	  // Append the div to the container
 	  reviewsContainer.appendChild(div);

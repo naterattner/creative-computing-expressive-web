@@ -3,6 +3,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
@@ -24,10 +25,19 @@ h1 {
 
 
 /* REVIEWS SECTION */
+.parent-container {
+  /* position: relative; */
+  
+}
+
+.grid-container {
+  
+}
+
 .grid {
-  margin: 0 auto;
   padding: 20px;
   max-width: 1500px;
+
 }
 
 /* clear fix */
@@ -41,10 +51,10 @@ h1 {
 .grid-item {
   float: left;
   width: 300px;
-  border: 1.5px solid #ccc; /* Border style */
+  /* border: 1.5px solid #ccc; */
   border-radius: 8px; /* Rounded corners */
-  padding-left: 10px; /* Padding inside the card */
-  padding-right: 10px; /* Padding inside the card */
+  padding-left: 0px; /* Padding inside the card */
+  padding-right: 0px; /* Padding inside the card */
   margin: 12px; /*Spacing between cards */
   background-color: #fff; /* Card background color */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift effect */
@@ -52,11 +62,92 @@ h1 {
   
 }
 
-/* Style for the text inside the review cards */
+/* Styles for the text inside the review cards */
 .grid-item p {
-  margin-bottom: 8px; 
+  /* margin-top: 8px;
+  margin-bottom: 5px; */
 }
 
-/* .grid-sizer {
-  width: calc(33.33% - 20px);
-} */
+.card-details {
+  /* Styles for the top section */
+  padding-top:5px;
+  padding-left:12px;
+  padding-right:12px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #61346b; /* Grey background */
+  /* padding: 20px; */
+}
+
+.card-name {
+  /* Title styles */
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  color: #ffffff;
+}
+
+.card-location-and-stars {
+  /* Location styles */
+  font-size: 16px;
+  margin-top: 9px;
+  margin-bottom: 0px;
+  color: #ffffff;
+}
+
+/*  */
+
+.card-categories {
+  /* Categories styles */
+  font-size: 14px;
+  color: rgb(240, 236, 236);
+  
+  margin-top: 6px;
+  margin-bottom: 0px;
+  padding-bottom: 15px;
+}
+
+hr {
+  border: none;
+  height: 1px; /* Adjust the height as needed */
+  background-color: #9d9c9c; /* Color of the line */
+
+  margin: 0 auto;
+}
+
+.card-reviews {
+  /* Styles for the top section */
+  padding-top:5px;
+  padding-left:12px;
+  padding-right:12px;
+  background-color: #eddfcb;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.card-text5StarHeading, .card-text1StarHeading {
+  margin-top:10px;
+  margin-bottom:10px;
+  font-weight:bold;
+  text-transform:uppercase;
+  font-size: 14px;
+  color: #333333
+}
+
+.card-text1StarHeading {
+  margin-top:15px;
+}
+
+.card-text5Star, .card-text1Star {
+  margin-top: 3px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #333333
+}
+
+.card-text1Star {
+  padding-bottom:10px;
+  margin-bottom: 0px;
+}
