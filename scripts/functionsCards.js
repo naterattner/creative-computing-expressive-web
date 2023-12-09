@@ -1,10 +1,10 @@
 // Function to create and append div elements for each item
 export function displayReviews(data) {
-	const reviewsContainer = document.querySelector('.reviews-container');
+	const reviewsContainer = document.querySelector('.grid');
   
 	data.forEach(item => {
 	  const div = document.createElement('div');
-	  div.classList.add('review-card');
+	  div.classList.add('review-card', 'grid-item');
   
 	  // Extracting fields from the JSON object
 	  const name = document.createElement('p');
