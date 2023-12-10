@@ -35,17 +35,38 @@ export function displayReviews(data) {
 	  categories.classList.add('card-categories');
 	  categories.textContent = `${item.categories}`;
   
-	  const text5StarHeading = document.createElement('p');
+	  const text5StarHeading = document.createElement('div');
 	  text5StarHeading.classList.add('card-text5StarHeading');
-	  text5StarHeading.textContent = `Five-Star Review`;
+
+	  //add five filled stars
+	  for (let i = 0; i < 5; i++) {
+		const filledStar = document.createElement('span');
+	    filledStar.classList.add('filled-star')
+	    filledStar.textContent = '\u2605';
+	    text5StarHeading.appendChild(filledStar);
+	  }
 
 	  const text5Star = document.createElement('p');
 	  text5Star.classList.add('card-text5Star');
 	  text5Star.textContent = `${item.text_5_star}`;
 
-	  const text1StarHeading = document.createElement('p');
+	  const text1StarHeading = document.createElement('div');
 	  text1StarHeading.classList.add('card-text1StarHeading');
-	  text1StarHeading.textContent = `One-Star Review`;
+
+	  // Loop to create and append stars
+	  for (let i = 0; i < 5; i++) {
+		const star = document.createElement('span');
+		star.textContent = '\u2605'; // Unicode character for a star (★)
+		if (i === 0) {
+			star.classList.add('filled-star'); // Add a different class to the first star
+		}
+		else {
+			star.classList.add('empty-star');
+		}
+		text1StarHeading.appendChild(star);
+		
+	  }
+
   
 	  const text1Star = document.createElement('p');
 	  text1Star.classList.add('card-text1Star');

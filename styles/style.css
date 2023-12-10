@@ -129,10 +129,16 @@ hr {
 .card-text5StarHeading, .card-text1StarHeading {
   margin-top:10px;
   margin-bottom:10px;
-  font-weight:bold;
-  text-transform:uppercase;
   font-size: 14px;
   color: #333333
+}
+
+.filled-star {
+  color: #61346b; /* Color for the filled star */
+}
+
+.empty-star {
+  color: #a3a2a2; /* Color for the empty star */
 }
 
 .card-text1StarHeading {
