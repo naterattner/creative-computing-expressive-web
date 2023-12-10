@@ -1,5 +1,62 @@
 * { box-sizing: border-box; }
 
+/* Special for mobile */
+@media all and (min-width: 1024px) and (max-width: 1580px) { 
+	h1 {
+		font-size: 2.3em !important;
+	}
+
+	h3 {
+		font-size: 1.55em !important;
+	}
+	
+	.landing-container {
+		width: 77% !important;
+	}
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) { 
+	h1 {
+		font-size: 2.0em !important;
+	}
+
+	h3 {
+		font-size: 1.45em !important;
+	}
+
+	.landing-container {
+		width: 75% !important;
+	}
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) { 
+	h1 {
+		font-size: 1.8em !important;
+	}
+
+	h3 {
+		font-size: 1.25em !important;
+	}
+
+	.landing-container {
+		width: 85% !important;
+	}
+}
+
+@media all and (max-width: 480px) { 
+	h1 {
+		font-size: 1.5em !important;
+	}
+
+	h3 {
+		font-size: 1.25em !important;
+	}
+
+	.landing-container {
+		width: 90% !important;
+	}
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -11,16 +68,68 @@ h1 {
   padding: 0;
 }
 
-
 /* LANDING PAGE */
 /* Ensure the landing section takes 100% of the viewport height */
 .landing {
-  height: 100vh; /* 100% of viewport height */
+  /* height: 100vh;  */
   background-color: #eddfcb; /* Change the background color as needed */
+  margin: 0 auto !important;
+  line-height: 1.5 !important;
+  
+  /* margin: 0; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
   /* display: flex; */
   /* justify-content: center;
   align-items: center;
   text-align: center; */
+}
+
+.landing-container {
+  margin: 0 auto !important;
+}
+
+h2 {
+  font-size:18px;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 30rem;
+  padding: 0rem 0.5rem 0.5rem;
+  /* border: 2px solid #a7a8aa;
+  border-radius: 0.5rem; */
+  margin: auto;
+}
+
+.chart {
+  display: grid;
+  grid-template-columns: auto;
+  gap: .5em 0;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  grid-auto-columns: 1fr;
+}
+
+li {
+  grid-column-start: 1;
+  background: #61346b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem
+}
+
+/* .five-star-bar, .one-star-bar {
+  background: #61346b;
+} */
+
+li span {
+  font-weight: bold;
 }
 
 
@@ -37,6 +146,7 @@ h1 {
 .grid {
   padding: 20px;
   max-width: 1500px;
+  
 
 }
 
