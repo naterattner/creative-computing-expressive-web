@@ -4,6 +4,7 @@
 <head>
     <title>Star Spectrum</title>
     <link rel="stylesheet" type="text/css" href="./styles/style.css" media="screen" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;500;600&family=Archivo:wght@500&family=PT+Sans:wght@400">
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 
 </head>
@@ -13,10 +14,13 @@
         <div class="landing-container">
             <h1>Star Spectrum</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci ex, aliquet maximus neque at, accumsan pharetra odio. Vestibulum massa lorem, tempus sed elit auctor, fermentum varius arcu.
+                Our digital world yields remarkable power on its physical counterpart. Ratings on review websites such as Yelp influence where we eat, shop, play, and call for help.
             </p>
             <p>
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi eu facilisis diam. Vestibulum sed turpis ipsum.
+                Beneath these aggregate star ratings often lies a range of personal experiences, with glowing five-star reviews left alongside scathing one-stars. Personal experiences can vary dramatically, and online platforms can bring out extreme viewpoints. But these digital reviews can shape a reader's perception of a place and sway how they spend their physical time. In many cases, that decision can be made simply by which review a reader sees first.
+            </p>
+            <p>
+                This web installation displays an analysis of a <a href="https://www.yelp.com/dataset" target="_blank">Yelp dataset</a> covering more than 150,000 businesses and 6.9 million reviews. It includes businesses that received both five and one-star reviews within the most recent year of the dataset, from early 2021 through early 2022.
             </p>
             <div class="chart-container">
                 <h2>Share of reviews on Yelp</h2>
@@ -28,40 +32,38 @@
                 
                     <li style="grid-column-end: span 21">
                     Four
-                    <span>21</span>
+                    <span>21%</span>
                     </li>
                 
                     <li style="grid-column-end: span 10">
                     Three
-                    <span>10</span>
+                    <span>10%</span>
                     </li>
                 
                     <li style="grid-column-end: span 8">
                     Two
-                    <span>8</span>
+                    <span>8%</span>
                     </li>
                 
                     <li style="grid-column-end: span 15" class="one-star-bar">
                     One
-                    <span>15</span>
+                    <span>15%</span>
                     </li>
             
                 </ul> 
             </div>
             <p>
-                Etiam tempus pretium magna non ultrices. Nullam dui mauris, laoreet id elit vel, tempor commodo nisi. Curabitur efficitur vitae metus non convallis. Duis ultrices placerat interdum.
+                Each card below is a business listed on Yelp in one of the 11 metropolitan areas the dataset, which is a subset of Yelp's database, includes. Every time this page is loaded, a random sample of businesses are shown out of thousands included in the analysis.
             </p>
-            <p>
-                Nunc a sodales diam, ut tempor nibh. Etiam scelerisque sodales faucibus. Vestibulum auctor varius pulvinar. Ut dictum, ante ac cursus cursus, est quam viverra elit, id blandit est tellus vitae nisl. Aenean ut lorem ultrices, rhoncus tortor at, fringilla eros. Aliquam gravida felis sed risus pharetra faucibus. Curabitur sit amet iaculis lorem. Nunc id interdum nisi. 
-            </p>
-            <button><a href="#reviews-anchor">Enter </a></button>
+            <!-- <button><a href="#reviews-anchor">Enter </a></button> -->
         </div>
     </div>
 
     <a id='reviews-anchor'></a>
-    <div class="parent-container">
+    <div class="reviews-container">
+        <button id="refreshButton">Refresh Data</button>
         <div class="grid-container">
-            <button id="refreshButton">Refresh Data</button>
+            
             <div class="grid">
                 <div class="grid-sizer"></div>
             <!-- Review cards are appended here -->

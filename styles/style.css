@@ -66,6 +66,7 @@ html, body {
 h1 {
   margin: 0;
   padding: 0;
+  font-family: 'Archivo';
 }
 
 /* LANDING PAGE */
@@ -88,15 +89,21 @@ h1 {
 
 .landing-container {
   margin: 0 auto !important;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 
 h2 {
   font-size:18px;
 }
 
+.landing p {
+  font-weight:300 !important;
+}
+
 .chart-container {
   width: 100%;
-  max-width: 30rem;
+  max-width: 35rem;
   padding: 0rem 0.5rem 0.5rem;
   /* border: 2px solid #a7a8aa;
   border-radius: 0.5rem; */
@@ -134,12 +141,14 @@ li span {
 
 
 /* REVIEWS SECTION */
-.parent-container {
+.reviews-container {
   /* position: relative; */
-  
+  margin: 0 auto !important;
+  background-color: #FAF9F6;
 }
 
 .grid-container {
+  
   
 }
 
