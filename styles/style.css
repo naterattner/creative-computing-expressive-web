@@ -168,6 +168,7 @@ li span {
 
 /* Style for the review cards */
 .grid-item {
+  font-family: 'Open Sans', sans-serif !important;
   float: left;
   width: 300px;
   /* border: 1.5px solid #ccc; */

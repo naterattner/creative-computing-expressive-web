@@ -37,3 +37,34 @@ getDataAndDisplay().then(() => {
 
 });
 
+
+//Refresh data
+const refreshButton = document.getElementById('refreshButton');
+
+// Function to handle the button click
+function handleButtonClick() {
+	// Add your logic here for refreshing data or any action you want to perform
+	console.log('Button clicked! Refreshing data...');
+	const gridDiv = document.querySelector('.grid');
+
+	// Empty the grid container by setting its innerHTML to an empty string
+	gridDiv.innerHTML = '';
+	// Add more code for data refresh or other actions
+	getDataAndDisplay().then(() => {
+		var grid = document.querySelector('.grid');
+		var iso = new Isotope(grid, {
+		  itemSelector: '.grid-item',
+		  masonry: {
+			columnWidth: 324
+		  },
+		});
+	  }).catch((error) => {
+		console.error('Error fetching data:', error);
+	  });
+	
+	// For example, refreshing the Isotope layout (if applicable)
+	// iso.layout();
+  }
+  
+  // Attach a click event listener to the button
+  refreshButton.addEventListener('click', handleButtonClick);
