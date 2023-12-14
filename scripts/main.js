@@ -1,57 +1,70 @@
 import { fetchJSONFile, getRandomItems, processData } from './functionsData.js';
+
 import { displayReviews } from './functionsCards.js';
+  
+// Call the function to initiate data processing
+//processData('./assets/data/merged_data_2021.json');
+// console.log(randomItems)
 
-const jsonPath = './assets/data/merged_data_1yr.json';
+const jsonPath = './assets/data/merged_data_1yr.json'
 
-async function initializeIsotope() {
-  try {
-    const grid = document.querySelector('.grid');
-    const iso = new Isotope(grid, {
-      itemSelector: '.grid-item',
-      masonry: {
-        columnWidth: 324
-      },
-    });
-    return iso;
-  } catch (error) {
-    console.error('Error initializing Isotope:', error);
-    return null;
-  }
-}
-
+// Call the function to get random items and assign it to a variable
 async function getDataAndDisplay() {
-  try {
-    const data = await processData(jsonPath);
-    if (data) {
-      displayReviews(data);
-      return data;
-    }
-    return null;
-  } catch (error) {
-    console.error('Error getting data and displaying:', error);
-    return null;
+	const data = await processData(jsonPath);
+	if (data) {
+		console.log(data)
+	  // Use the data for further processing or display
+	  displayReviews(data); // Call the displayReviews function with the fetched data
+	}
   }
-}
+  
+document.addEventListener('DOMContentLoaded', () => {
+// Your JavaScript code that interacts with the DOM goes here
+// getDataAndDisplay(); // Call your function here then 
 
-document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    const iso = await initializeIsotope();
-    if (iso) {
-      const data = await getDataAndDisplay();
-      if (data) {
-        const refreshButton = document.getElementById('refreshButton');
-        refreshButton.addEventListener('click', async () => {
-          const gridDiv = document.querySelector('.grid');
-          gridDiv.innerHTML = '';
-          const newData = await getDataAndDisplay();
-          if (newData && iso) {
-            iso.reloadItems();
-            iso.arrange();
-          }
-        });
-      }
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
+// Call function then Initialize Isotope after data fetching and display
+getDataAndDisplay().then(() => {
+	var grid = document.querySelector('.grid');
+	var iso = new Isotope(grid, {
+	  itemSelector: '.grid-item',
+	  masonry: {
+		columnWidth: 324
+	  },
+	});
+  }).catch((error) => {
+	console.error('Error fetching data:', error);
+  });
+
 });
+
+
+//Refresh data
+const refreshButton = document.getElementById('refreshButton');
+
+// Function to handle the button click
+function handleButtonClick() {
+	// Add your logic here for refreshing data or any action you want to perform
+	console.log('Button clicked! Refreshing data...');
+	const gridDiv = document.querySelector('.grid');
+
+	// Empty the grid container by setting its innerHTML to an empty string
+	gridDiv.innerHTML = '';
+	// Add more code for data refresh or other actions
+	getDataAndDisplay().then(() => {
+		var grid = document.querySelector('.grid');
+		var iso = new Isotope(grid, {
+		  itemSelector: '.grid-item',
+		  masonry: {
+			columnWidth: 324
+		  },
+		});
+	  }).catch((error) => {
+		console.error('Error fetching data:', error);
+	  });
+	
+	// For example, refreshing the Isotope layout (if applicable)
+	// iso.layout();
+  }
+  
+  // Attach a click event listener to the button
+  refreshButton.addEventListener('click', handleButtonClick);
