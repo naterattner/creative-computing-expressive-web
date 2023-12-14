@@ -93,6 +93,26 @@ h1 {
   padding-bottom:10px;
 }
 
+/* Basic button styles */
+#refreshButton {
+  margin-top:20px;
+  margin-left:35px;
+  padding: 10px 20px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 4px; /* Border radius for rounded corners */
+  background-color: #f0f0f0; /* Button background color */
+  color: #333; /* Text color */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover styles */
+#refreshButton:hover {
+  background-color: #ddd; /* Change background color on hover */
+  color: #000; /* Change text color on hover */
+}
+
 h2 {
   font-size:18px;
 }
