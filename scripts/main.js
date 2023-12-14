@@ -1,10 +1,5 @@
 import { fetchJSONFile, getRandomItems, processData } from './functionsData.js';
-
 import { displayReviews } from './functionsCards.js';
-  
-// Call the function to initiate data processing
-//processData('./assets/data/merged_data_2021.json');
-// console.log(randomItems)
 
 const jsonPath = './assets/data/merged_data_1yr.json'
 
@@ -20,8 +15,6 @@ async function getDataAndDisplay() {
   
 document.addEventListener('DOMContentLoaded', () => {
 // Your JavaScript code that interacts with the DOM goes here
-// getDataAndDisplay(); // Call your function here then 
-
 // Call function then Initialize Isotope after data fetching and display
 getDataAndDisplay().then(() => {
 	var grid = document.querySelector('.grid');
@@ -61,9 +54,6 @@ function handleButtonClick() {
 	  }).catch((error) => {
 		console.error('Error fetching data:', error);
 	  });
-	
-	// For example, refreshing the Isotope layout (if applicable)
-	// iso.layout();
   }
   
   // Attach a click event listener to the button
